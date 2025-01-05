@@ -6,7 +6,9 @@ describe ("CountryCodeGenerator", () => {
         const estGenerator = new CountryCodeGenerator('EST');
         const code = estGenerator.generateCode()
         expect(code.startsWith("EST-")).toBe(true);
+//Проверка длины строки        
         expect(code.length).toBe(8);
+//Проверка кода на соответствие шаблону "префикс страны и четыре цифры"       
         expect(/EST-\d{4}/.test(code)).toBe(true)
     })
     test ("Check prefix of Latvia", () => {
